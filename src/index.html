@@ -4,42 +4,51 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Webpack Starter Kit</title>
-
-    <!-- Don't forget to delete this style tag. -->
-    <style>
-      body {
-        min-height: 100vh;
-        margin: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .intro {
-        text-align: center;
-      }
-
-      .intro h1 {
-        margin-top: 0;
-        font-weight: 500;
-        font-size: 40px;
-      }
-
-      .intro img {
-        display: block;
-        max-width: 100%;
-        height: auto;
-      }
-    </style>
+    <title>image-finder</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
-    <article class="intro">
-      <h1>Webpack starter kit</h1>
+    <form class="form-inline search-form js-search-form">
+      <div class="form-group mx-sm-3 mb-2">
+        <label for="searchQuery" class="sr-only"></label>
+        <input
+          type="text"
+          class="form-control"
+          name="query"
+          id="searchQuery"
+          placeholder="Search images..."
+          autocomplete="off"
+        />
+      </div>
+      <button type="submit" class="btn btn-primary mb-2">search</button>
+    </form>
 
-      <!-- HTML image reference example. -->
-      <img src="./images/intro.png" alt="" width="640" />
-    </article>
+    <ul class="gallery js-gallery"></ul>
+
+    <div class="lightbox js-lightbox">
+      <div class="lightbox__overlay"></div>
+
+      <div class="lightbox__content">
+        <img class="lightbox__image" src="/" alt="Img" />
+      </div>
+    </div>
+
+    <button
+      type="button"
+      class="btn btn-primary button hidden"
+      data-action="load-more"
+    >
+      <span
+        class="spinner-border spinner-border-sm spinner is-hidden"
+        role="status"
+        aria-hidden="true"
+      ></span>
+
+      <span class="label">show more</span>
+    </button>
   </body>
 </html>
