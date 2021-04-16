@@ -27,7 +27,7 @@ function onSearch(event) {
   imagesApiServise.fetchImages().then(hits => {
     clearMarkupGallery();
     markupGallery(hits);
-    if (imagesApiServise.query !== '') {
+    if (imagesApiServise.query.trim() !== '') {
       success({
         text: 'Good search',
         delay: 500,

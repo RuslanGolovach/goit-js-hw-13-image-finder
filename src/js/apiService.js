@@ -17,7 +17,8 @@ export default class ImagesApiService {
           return;
         }
         return hits;
-      });
+      })
+      .catch(error => console.log(error));
   }
 
   incrementPage() {
